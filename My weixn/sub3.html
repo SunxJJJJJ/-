@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function(){
+			document.getElementById('mtvc').addEventListener('tap' ,function(){
+					mui.openWindow({
+						url:"sub3/friend.html",
+						id:"sub3/friend.html"
+					});
+				});
+			});
+			
+			
+			
+		</script>
+		
+			
+		<div class="mui-content">
+			
+			<div class="mui-content">
+			
+				<ul class="mui-table-view">
+					
+					<li class="mui-table-view-cell  mui-left listp" id="mtvc">
+						<span class="mui-icon mui-icon-pengyouquan">&nbsp;&nbsp;<p >朋友圈</p></span>
+						<!--<img class="" src="" >Item 5-->
+					</li>
+					</ul>
+					<br />
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell  mui-left listp" >
+					<!--	<input name="radio" type="radio">Item 6-->	
+						<span class="mui-icon mui-icon-camera">&nbsp;&nbsp;<p>扫一扫</p></span>
+					</li>
+					<li class="mui-table-view-cell  mui-left listp"  >
+						<!--<input name="checkbox" type="checkbox">Item 7-->
+							<span class="mui-icon mui-icon-spinner mui-spin">&nbsp;&nbsp;<p >摇一摇</p></span>
+					</li>
+					</ul>
+					<br />
+					<ul	class="mui-table-view">
+					<li class="mui-table-view-cell  mui-left listp"  >
+						<!--<input name="checkbox" type="checkbox">Item 8-->
+							<span class="mui-icon mui-icon-spinner-cycle mui-spin">&nbsp;&nbsp;<p>搜一搜</p></span>
+					</li>
+					</ul>
+				
+			
+		</div>
+			
+			
+		</div>
+		
+	</body>
+
+</html>

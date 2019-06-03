@@ -1,0 +1,30 @@
+body,{
+	background-color: white;
+	
+}
+.mui-bar-nav{
+	background-color:#FAFAFA;
+	
+}
+.mui-content{
+	margin-top: -15px;
+}
+.listp p{
+	line-height: 30px; 
+	font-size: 18px; 
+	display: inline-block;
+	color: #000000;
+}
+#mymuiTitle{
+	color: #000000;
+}
+.mui-card-media{
+	width: 100%;
+
+	
+}
+#mynavbar{
+	opacity: 0.2;
+	
+}
+

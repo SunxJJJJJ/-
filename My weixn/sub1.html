@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		
+		
+		
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			
+			//加载事件
+			mui.plusReady(function(){
+				mui(".mui-table-view-cell").on("tap","a",function(){
+					//打开聊天页面
+					//获取好友名称
+					var title = this.getAttribute("title");
+					
+				mui.openWindow({
+				    url:"sub1/im-chat.html",
+				    id:"sub1/im-chat.html",
+				    
+				    extras:{
+				      name:title//自定义扩展参数，可以用来处理页面间传值
+				    },
+				   
+				    show:{
+				      autoShow:true,//页面loaded事件发生后自动显示，默认为true
+				      aniShow:"slide-in-right",//页面显示动画，默认为”slide-in-right“；
+				      duration:100//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+				    },
+				    waiting:{
+				      autoShow:true,//自动显示等待框，默认为true
+				      title:'正在加载...'//等待对话框上显示的提示内容
+				     
+				    }
+				})	
+				})
+			});	
+		</script>
+		
+		
+		
+		<!--主题内容-->
+	
+		<div class="mui-content">
+			
+			<!--好友列表-->
+				<ul class="mui-table-view">
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;" title=" 微信NO.2团队  ">
+				        	
+				            <img class="mui-media-object mui-pull-left" src="images/_20190508160121.jpg">
+				            <div class="mui-media-body wechatname">
+				             微信NO.2团队  
+				             <span class="mui-badge mui-badge-danger">1</span>
+				                <p class="mui-ellipsis">Welcome to  Wechat.2</p>
+				            </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;" title="文件传输助手">
+				            <img class="mui-media-object mui-pull-left" src="images/_20190508160110.jpg">
+				            <div class="mui-media-body wechatname">
+				                 文件传输助手
+				                 <span class="mui-badge mui-badge-danger">1</span>
+				                <p class="mui-ellipsis">Welcome to  Wechat.2</p>
+				            </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;" title=" SunxJJJJJ">
+				            <img class="mui-media-object mui-pull-left" src="images/_20190508160115.jpg">
+				            <div class="mui-media-body wechatname">
+				                SunxJJJJJ
+				                <span class="mui-badge mui-badge-danger">1</span>
+				                <p class="mui-ellipsis">[smile]</p>
+				            </div>
+				        </a>
+				    </li>
+				</ul>
+			
+		</div>
+	</body>
+
+</html>

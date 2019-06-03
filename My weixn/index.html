@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script type="text/jscript" src="js/mui.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      	
+      	mui.init();
+
+
+//mui.plusReady加载完成事件
+	mui.plusReady(function(){
+	var subPages=["sub1.html","sub2.html","sub3.html","sub4.html"];
+	
+	//定义子页面的显示位置样式
+	var subPagesStyle={
+		top:"44px",
+		bottom:"50px"
+	};
+	
+	//获取主页面,webview
+	var mainView = plus.webview.currentWebview();
+	
+	
+	for (var i=0;i<subPages.length;i++) {
+		/*遍历子页面数组，根据url创建webView*/
+		var url= subPages[i];
+		
+		
+		/*创建webview语法：
+		 参数1，url用于指定那个web，创建为webview
+		 参数2，给每个webview起个标识符，用于后面控制显示
+		 参数3，style 设置webview样式*/
+		var subView = plus.webview.create(url,url,subPagesStyle);
+		
+		//隐藏子页面
+		subView.hide();
+		
+		//让主子页面同时显示，将子页面subview加入主页面中mianview
+		mainView.append(subView);
+		
+	}
+	//设置默认sub1.html显示好友列表子页面显示
+	//根据id设置具体webview，显示语句 plus.webview.show(id)：
+	plus.webview.show(subPages[0]);
+	
+	
+	
+	//给每个底部导航栏目注册模拟用户的“点击事件”
+	//注册事件语句：mui（html元素的父级选择器）.on（事件名，注册事件的HTML元素选择器，事件函数）
+	//事件名：tap用户点击事件，注意.onclick,click网页点击事件在手机里面无效
+	mui(".mui-bar-tab").on("tap","a",function(){
+		//获取当前事件源对象的属性值--“现在是获取 href 的值”
+		var id = this.getAttribute("href");
+		//设置当前导航对应的子页面显示，就是根据指定id设置webview显示
+		plus.webview.show(id);
+	});
+	
+	
+	
+	
+	
+	
+});
+
+	
+
+      	
+      	
+      	
+      	
+      	
+      	
+      	
+      	
+      	
+      	
+    </script>
+</head>
+<body>
+	
+		<header class="mui-bar mui-bar-nav">
+		    <h1 class="mui-title mui-text-left">山寨版微信</h1>
+		</header>
+	
+	
+	
+		
+		
+
+	
+	
+	<footer>
+		<nav class="mui-bar mui-bar-tab">
+		    <a class="mui-tab-item mui-active" href="sub1.html">
+		        <span class="mui-icon mui-icon-chatboxes"></span>
+		        <span class="mui-badge mui-badge-danger">3</span>
+		        <span class="mui-tab-label">微信</span>
+		        
+		    </a>
+		    <a class="mui-tab-item" href="sub2.html">
+		        <span class="mui-icon mui-icon-list"></span>
+		        <span class="mui-tab-label">通讯录</span>
+		    </a>
+		    <a class="mui-tab-item" href="sub3.html">
+		        <span class="mui-icon mui-icon-navigate"></span>
+		        <span class="mui-tab-label">发现</span>
+		    </a>
+		    <a class="mui-tab-item" href="sub4.html">
+		        <span class="mui-icon mui-icon-contact"></span>
+		        <span class="mui-tab-label">我</span>
+		    </a>
+		</nav>
+	</footer>
+	
+	
+	
+</body>
+</html>
